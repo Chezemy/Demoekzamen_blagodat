@@ -6,21 +6,24 @@
         xmlns:local="clr-namespace:Blagodat"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="150" />
+            <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Background="#FF76E383" Grid.Row="0">
-            <Button Click="Btn_user" Margin="5" Background="#FF498C51" Content="User" VerticalAlignment="Top" HorizontalAlignment="Right" Height="30" Width="140"></Button>
-            <Button  Click="Btn_admin" Margin="5" Background="#FF498C51" Content="Admin" VerticalAlignment="Center" HorizontalAlignment="Right" Height="30" Width="140"></Button>
-            <Button Name="GoBack" Margin="5" Background="#FF498C51" Content="Back" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="30" Width="140" Click="Btn_back"></Button>
+        <Image HorizontalAlignment="Left" Height="80" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" Source="res/logo.png"/>
+        <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Content="Администратор" Margin="0"  Width="120" Height="30" RenderTransformOrigin="0.621,0.604"   FontSize="14" Foreground="White" Click="Admin_Click"/>
+            <Button Content="Менеджер"  Margin="0"  Width="120" Height="30" RenderTransformOrigin="0.621,0.604"   FontSize="14" Foreground="White" Click="Manager_Click"/>
+            <Button Content="Ст. смены"  Margin="0"  Width="120" Height="30" RenderTransformOrigin="0.621,0.604"   FontSize="14" Foreground="White" Click="Smena_Click"/>
         </StackPanel>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="70">Благодать</TextBlock>
-        <Image x:Name="logo_Blagodat_png" Margin="18,17,651,16" Source="logo_Blagodat.png" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <StackPanel Grid.Row="1" Background="#FFE1E1E1"></StackPanel>
-        <Frame x:Name="MainFrame" ContentRendered="back" NavigationUIVisibility="Hidden" Grid.Row="1"></Frame>
-       
-        
+
+        <Label Content="ГК Благодать" HorizontalAlignment="Left" Margin="215,32,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="25" FontStyle="Oblique" RenderTransformOrigin="0.059,0.151" Height="35" Width="319"/>
+        <Frame Grid.Row="1" Name="MainFrame" Navigated="MainFrame_Navigated" NavigationUIVisibility="Hidden"/>
+
+        <Grid>
+            <DataGrid Margin="0,97,0,0" Background="#2624B3"/>
+            <TextBlock Width="200" Height="40" Margin="0 110 0 0" FontFamily="Arial" FontSize="25" FontStyle="Oblique"></TextBlock>
+        </Grid>
     </Grid>
 </Window>
